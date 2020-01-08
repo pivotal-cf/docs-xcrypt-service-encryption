@@ -1,0 +1,20 @@
+---
+:archive_menu:
+  ".": 
+:production_host: hello
+:subnav_templates:
+  xcrypt_service_encryption: xcrypt_service_encryption_subnav
+:template_variables: 
+:local_repo_dir: "/home/swetha/zettaset-documentation-github/zts-documentation/XCrypt-Service-Encryption-for-Cloud-Foundry/Pivotal-Platform-Documentation/xcrypt_service_encryption"
+:workspace: !ruby/object:Pathname
+  path: "/home/swetha/zettaset-documentation-github/zts-documentation/XCrypt-Service-Encryption-for-Cloud-Foundry/Pivotal-Platform-Documentation/xcrypt_service_encryption/docs-book/output/master_middleman/source"
+:feedback_enabled: 
+:repo_link_enabled: true
+:repo_links:
+  xcrypt_service_encryption:
+    repo: docs-content
+    ref: master
+    at_path: 
+:product_info:
+  xcrypt_service_encryption: {}
+:elastic_search: false

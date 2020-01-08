@@ -1,31 +1,74 @@
 ---
-title: Using YOUR-PRODUCT-NAME
-owner: Partners
+title: Creating and Binding MySQL Service Instances
+owner:  Zettaset
 ---
 
 <strong><%= modified_date %></strong>
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes the steps to create and bind MySQL service instances.
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile.
-Give procedures for how to perform the different functions offered by your product and provide screenshots where necessary.**
+This topic describes how developers create and bind instances of MySQL with encryption for Pivotal Platform.
+After deploying  MySQL and  XCrypt Service Encryption for Pivotal Platform,  developers can use either the Cloud Foundry Command Line Interface (cf CLI) or Apps Manager to create an instance of the service and bind it to apps. Binding instances creates unique credentials for each app to access the database.
 
-Other topics that you should address in your documentation:
 
-+ **Troubleshooting**---If you include a Troubleshooting section, follow the Symptom/Explanation format used in the
-  [Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic.
+##<a id='cfcli'></a>  Create and Bind a Service Instance with the cf CLI
 
-+ **Disaster recovery**--How do you recover data from the tile after a disaster? How do you perform backups?
 
-+ **Scalability**--How do you scale up the tile? How do you know when you need to scale up?
+To create and bind an instance of MySQL Service with the cf CLI, perform the following steps:
 
-+ **Monitoring**--How do you monitor the tile? Does the tile send events to the Loggregator Firehose?
+1. Set your API endpoint to the Cloud Controller of your deployment.
+![APIEndpoint](images/cf-api.png)
 
-+ **Auditing**--Can Pivotal Platform operators use the standard Accounting and Usage reports?
 
-+ **Security**--How is this tile secured? How is the data secured?
+2. Log in to your deployment and select an org and a space.
+![Login](images/cf-login.png)
 
-You can create separate pages for each of these topics or group them in one page about administering or maintaining the tile.
+3. List the Marketplace services and locate  MySQL Service.
+![Marketplace](images/cf-marketplace.png)
+
+4. Create an instance of  MYSQL Service. Select any of the existing service plans available for  MYSQL service.
+![CreateService](images/cf-create-service.png)
+
+Here  MySQL instance is created and encrypted.
+
+5. Check the status of the service created.
+![ServiceStatus](images/cf-service-status.png)
+
+6. Once the status of the service indicates success, the service can be bound to an app
+![BindApp](images/cf-bind-app.png)
+
+7. Restage the app for the binding to take effect.
+![RestageApp](images/cf-restage-app.png)
+
+
+
+
+## <a id='apps-manager'></a> Create and Bind a Service Instance in Apps Manager
+
+
+
+To create and bind an instance of  MySQL Service in Apps Manager:
+
+1. Navigate to apps.YOUR-SYSTEM-DOMAIN in a browser and log in.
+
+2. Click **Marketplace** in the left navigation.
+
+3. Click **MySQL for Pivotal Cloud Foundry v2**.
+
+4. Select any of the database plans available for  MySQL service
+
+5. Enter an **Instance Name** and select a space under **Add to Space**. To bind the service instance to an app, select an app under **Bind to App**.
+
+6. Click **Add**.  MySQL instance would be created and encrypted and then binded to the App.
+
+7. You can also bind an app to a service instance by navigating to the app page, clicking **Services**, then clicking **Bind a Service**.
+  Select a service instance to bind to the app and click **Bind**.
+
+
+
+
+
+
+
 

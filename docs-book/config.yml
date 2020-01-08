@@ -16,8 +16,8 @@ public_host: hello
 sections:
   - repository:
       name: docs-content
-    directory: xcrypt-service-encryption
-    subnav_template: xcrypt-service-encryption_subnav.erb       
+    directory: xcrypt_service_encryption
+    subnav_template: xcrypt_service_encryption_subnav.erb       
 
 template_variables:                             # optional
 
