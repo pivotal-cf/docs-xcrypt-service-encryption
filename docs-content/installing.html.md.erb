@@ -1,34 +1,72 @@
 ---
-title: Installing and Configuring YOUR-PRODUCT-NAME
-owner: Partners
+title: Installing and Configuring XCrypt Service Encryption for Pivotal Platform
+owner: Zettaset
 ---
 
 <strong><%= modified_date %></strong>
 
-This topic describes how to install and configure YOUR-PRODUCT-NAME.
+This topic describes installation and configuration of XCrypt Service Encryption for Pivotal Data Platform.
 
-##<a id='install'></a> Install and Configure YOUR-PRODUCT-NAME
 
-To install the YOUR-PRODUCT-NAME file on the Ops Manager Installation Dashboard, do the following:
+##<a id='install'></a> Install and Configure XCrypt Service Encryption for Pivotal Platform.
+
+To install the XCrypt Service Encryption for Pivotal Platform on the Ops Manager Installation Dashboard,
+do the following:
 
 1. Download the product file from Pivotal Network.
 
-1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
+2. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the
+product file.
 
-1. Under **Import a Product**, click **+** next to the version number of YOUR-PRODUCT-NAME.
+3. Under the **Import a Product** button, click **+** next to the version number of XCrypt Service Encryption for Pivotal Platform.
 This adds the tile to your staging area.
 
-1. Click the newly added **YOUR-PRODUCT-NAME** tile.
+4. Click the newly added **XCrypt Service Encryption Client for PCF-MySQL** tile.
 
-1. **This portion of the procedure should tell the users how to configure the newly added tile by
-walking them through the sections. Which fields should they fill out? What are the different
-checkboxes? Include relevant screenshots here.**
+1. Assign AZ and Networks Page:
 
-1. Click **Save**.
+    ![Zones](images/zts-assign-networks.png)
+    1. Place singleton jobs in: Select the AZ in which the Identity Server VM needs to run.
+    1. Balance other jobs in: Select any combination of AZs.
+    2. Network: Select the network in which the client needs to run 
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply changes** to install YOUR-PRODUCT-NAME tile.
 
-**If needed, include additional configuration information below. For example, maybe there are
-configuration options not required for installation but which could be useful for certain users. Typical topics include:**
-1. **Self-service**--Do you have recommendations on how to configure/design plans in the tile so that users can choose the best options for themselves?
-1. **High availability**--How do you configure/deploy X Service tile to be highly available?
+2. Xcrypt Server properties page:
+    ![License-key](images/zts-license-key.png)
+    Add the  license key corresponding to your XCrypt Service Encryption for Pivotal Platform. 
+    If you do not possess a valid license key, contact support@zettaset.com
+
+3. Certificte Authority properties page:
+    ![Cert](images/zts-ca.png)
+
+    3. Enter a secure Hardware Security Module(HSM) user pin and Security Officer pin 
+    3. Add the fields of the Trusted CA (Certificate Authority)
+        - CA Cert Organization Name
+        - CA Cert Organization Unit
+        - CA Cert Organization Email
+        - CA Cert Organization Locale
+        - CA Cert Organization State
+        - CA Cert Organization Country
+        - CA Common Name
+    3. Enter a secure password for the CA server 
+
+4. Resource Config
+    ![Resource](images/zts-resource-config.png)
+
+    The four servers that would be installed during the installation process is
+    5. ca_server
+    5. license_server
+    5. kmip_server
+    5. kmip_backup
+
+    Use the default provisoning unless it needs to be modified as per the network requirements of the environment
+
+5. Click on **Save** button
+
+6. Return to the Ops Manager Installation Dashboard and click **Apply changes** to install XCrypt Service Encryption for Pivotal Platform
+   and wait for the installation to complete.
+
+7. After the installation finishes, see Creating and Binding MySQL Service Instances for how to create and bind MYSQL service instances.
+
+
+
